@@ -4,7 +4,7 @@ const app = express()
 
 
 // Database Link
-MongoClient.connect('mongodb+srv://yoda:maynodebewithyou@cluster0.odr1pds.mongodb.net/?retryWrites=true&w=majority')
+MongoClient.connect(process.env.DB_STRING)
     .then(client => {
         console.log('Connected to Database')
         const db = client.db('star-wars-quotes')
